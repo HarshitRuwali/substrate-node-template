@@ -68,7 +68,7 @@ pub mod pallet {
 
 		#[pallet::weight(10_000 + T::DbWeight::get().writes(1))]
 		pub fn add_two_numbers(origin: OriginFor<T>, first_number:u32, second_number:u32) -> DispatchResult{
-			let signer = ensure_signed(origin)?;
+			let _signer = ensure_signed(origin)?;
 			// ensure!(first_number < 0, "First number cannot be negative");
 			// ensure!(second_number < 0, "Second number cannot be negative");
 			ensure!(first_number > 50, <Error<T>>::FirstNumberCannotBeLessThenFifty);
